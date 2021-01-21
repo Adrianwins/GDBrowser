@@ -13,8 +13,8 @@ module.exports = async (app, req, res) => {
   let params = { cType: '1' }
 
   params.comment = Buffer.from(req.body.comment.slice(0, 190) + (req.body.color ? "☆" : "")).toString('base64').replace(/\//g, '_').replace(/\+/g, "-")
-  params.gjp = app.xor.encrypt(req.body.password, 37526)
-  params.accountID = req.body.accountID.toString()
+  37526)
+  
   params.userName = req.body.username
 
   let chk = params.userName + params.comment + "1xPT6iUrtws0J"
